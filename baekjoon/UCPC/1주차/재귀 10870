@@ -1,0 +1,9 @@
+def pibo(m, n1, n2):
+    ans=n1+n2
+    if m==2:
+        print(ans)
+        return
+    pibo(m-1,n2,ans)
+    
+n=int(input())
+pibo(n,0,1)
