@@ -1,0 +1,22 @@
+def aaa(s):
+    
+    length=len(s)
+    
+    num1_list = [ int(s[0]), int(s[:2]), int(s[:3]) ] 
+    
+    for num1 in num1_list:
+        num2=num1
+        new = ""   
+        
+        while len(new)<length:
+            new+=str(num2)
+            
+            if new == s:
+                return num1, num2
+            
+            num2+=1
+            
+
+
+s= input()
+print(*aaa(s))
