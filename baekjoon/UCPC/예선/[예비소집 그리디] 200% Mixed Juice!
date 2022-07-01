@@ -1,0 +1,32 @@
+n,m=map(int, input().split())
+liter_arr =[]
+sugar_arr= []
+arr = []
+
+for _ in range(n):
+    liter, sugar = map(int, input().split())
+    
+    arr.append((liter, sugar, sugar/liter))
+    arr.sort(key=lambda x:x[2], reverse=True)
+print(arr)
+
+def aaa(arr):
+    ans=0
+    usable_liter=m
+    
+    for group in arr:
+        liter=group[0]
+        sugar=group[1]
+        
+        if liter >= usable_liter:
+            ans += sugar*usable_liter/liter
+            return ans
+        else:
+            ans += sugar
+            usable_liter -= liter
+
+        if usable_liter==0:
+            return ans
+
+ans=aaa(arr)
+print(ans)
